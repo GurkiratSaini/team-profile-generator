@@ -30,7 +30,7 @@ test('gets engineer email', () => {
 test('gets engineer role', () => {
     const engineer = new Engineer('Dave', 5, 'dave@gmail.com', 'DaveGH');
 
-    expect(engineer.getRole()).toEqual(expect.any(Object));
+    expect(engineer.getRole()).toEqual(expect.any(String));
 })
 
 test('gets enginner github', () => {
