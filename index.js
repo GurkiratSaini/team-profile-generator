@@ -1,6 +1,9 @@
 const inquirer = require('inquirer');
 
+const employeesArr = [];
+
 function init() {
+    let employeeObj = {};
     return inquirer.prompt([
         {
             type: 'input',
@@ -47,7 +50,7 @@ function init() {
         .then(data => {
 
             // data from first inquirer prompt for basic information
-            console.log(data);
+            employeeObj = { ...data };
 
             if (data.role === 'Manager') {
                 return inquirer.prompt(
@@ -101,13 +104,22 @@ function init() {
         .then(roleData => {
 
             // data from second inquirer prompt for role information
-            console.log(roleData);
+            employeeObj = { ...employeeObj, ...roleData };
+            employeesArr.push(employeeObj);
+
+            // return inquirer.prompt(
+            //     {
+            //         type: 'confirm',
+            //         name: 'addMoreEmployees',
+            //         message: 'Would you like to enter another employee? ',
+            //         default: true
+            //     }
+            // )
         })
+        .then()
 
 }
 
-// create a global array to hold employee names
-// create a local object in init() to hold employee information
 // add functionality to loop init() until done adding employees
 
 init();
