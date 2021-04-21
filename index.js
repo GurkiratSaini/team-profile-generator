@@ -106,20 +106,31 @@ function init() {
             // data from second inquirer prompt for role information
             employeeObj = { ...employeeObj, ...roleData };
             employeesArr.push(employeeObj);
+            console.log(employeesArr);
 
-            // return inquirer.prompt(
-            //     {
-            //         type: 'confirm',
-            //         name: 'addMoreEmployees',
-            //         message: 'Would you like to enter another employee? ',
-            //         default: true
-            //     }
-            // )
+            return inquirer.prompt(
+                {
+                    type: 'confirm',
+                    name: 'addMoreEmployees',
+                    message: 'Would you like to enter another employee? ',
+                    default: true
+                }
+            )
         })
-        .then()
+        .then(addEmployee => {
+            if (addEmployee.addMoreEmployees) {
+                init();
+            }
+            else {
+                // logging summary for now, will need to call classes to make user objects.
+                console.log(`All employees entered! Here is a summary: `);
+                console.log(employeesArr);
+            }
+        })
+        .catch(err => {
+            if (err) throw Error;
+        })
 
 }
-
-// add functionality to loop init() until done adding employees
 
 init();
