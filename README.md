@@ -24,6 +24,10 @@
   ## Tests
   This application has a __tests__ directory that tests Objects using Jest. To run tests, enter 'npm test' in console.
 
+  ## Video Walkthrough
+  Video Walkthrough of this application can be found [here.](https://drive.google.com/file/d/1FBl0LNFYFTyyzWNX78YZ-cA6SDglvXGD/view?usp=sharing)
+  The generated file from the video is available in the repository as team.html.
+
   ## Questions
   If you have any questions, feel free to reach out to me at below- 
 

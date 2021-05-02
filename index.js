@@ -127,7 +127,7 @@ function init() {
                 console.log(`All employees entered!`);
                 // console.log(employeesArr);
                 render.HTMLGenerate(employeesArr);
-                console.log('Generated index.html can be found at the root of the application');
+                console.log('Generated team.html can be found at the root of the application');
             }
         })
         .catch(err => {
