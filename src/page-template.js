@@ -19,13 +19,8 @@ function HTMLGenerate(employees) {
         .filter(employee => employee.role === "Intern")
         .map(intern => internHTML(intern)));
 
-    // console.log(html);
     renderIndexHtml(html);
 }
-
-// function parseName(name) {
-//     return name.split(/\s/g).join('').toLowerCase();
-// }
 
 function managerHTML(mgr) {
     let manager = new Manager(mgr.name, mgr.id, mgr.email, mgr.managerOfficeNumber);
@@ -77,3 +72,5 @@ function writeFile(data) {
         console.log('Success!');
     })
 }
+
+module.exports = { HTMLGenerate }

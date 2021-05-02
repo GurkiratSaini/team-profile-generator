@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const render = require('./src/page-template');
 
 const employeesArr = [];
 
@@ -123,8 +124,10 @@ function init() {
             }
             else {
                 // logging summary for now, will need to call classes to make user objects.
-                console.log(`All employees entered! Here is a summary: `);
-                console.log(employeesArr);
+                console.log(`All employees entered!`);
+                // console.log(employeesArr);
+                render.HTMLGenerate(employeesArr);
+                console.log('Generated index.html can be found at the root of the application');
             }
         })
         .catch(err => {
